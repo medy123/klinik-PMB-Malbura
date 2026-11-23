@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- ==========================================================
+         BAGIAN <head>: informasi halaman yang tidak terlihat pengguna.
+         Fungsi: mengatur encoding, judul tab, dan memuat CSS/font.
+         ========================================================== -->
+    <meta charset="UTF-8">
+    <!-- Baris ini membuat tampilan menyesuaikan lebar layar ponsel -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul yang muncul di tab browser -->
+    <title>PMB Maribu - Pelayanan Kesehatan Terpercaya</title>
+    <!-- Deskripsi singkat untuk mesin pencari (SEO) -->
+    <meta name="description" content="PMB Maribu menyediakan konsultasi dokter, medical check up, vaksinasi, dan perawatan dengan pelayanan ramah serta harga terjangkau.">
+
+    <!-- File CSS berisi semua aturan tampilan/ warna website -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Poppins dari Google Fonts dipakai di seluruh teks -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome dipakai untuk ikon (cross medis, telepon, WhatsApp, dll.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================================
+         NAVBAR: menu navigasi tetap (fixed) di bagian atas halaman.
+         Kelas "scrolled" ditambahkan script.js saat halaman digulir.
+         ========================================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo PMB: ikon salib medis + nama PMB -->
+            <a href="#home" class="logo">
+                <i class="fas fa-cross"></i>
+                <span>PMB Maribu</span>
+            </a>
+
+            <!-- Tombol hamburger: hanya muncul di layar ponsel (lihat CSS media query) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Buka menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Daftar tautan menu. Tiap href mengarah ke id section di bawah -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Beranda</a></li>
+                <li><a href="#about" class="nav-link">Tentang</a></li>
+                <li><a href="#layanan" class="nav-link">Layanan</a></li>
+                <li><a href="#fasilitas" class="nav-link">Fasilitas</a></li>
+                <li><a href="#dokter" class="nav-link">Dokter</a></li>
+                <li><a href="#kontak" class="nav-link">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+         HERO: bagian pertama yang terlihat saat membuka website.
+         Berisi slide gambar latar, judul, tombol, dan angka statistik.
+         ========================================================== -->
+    <section class="hero" id="home">
+        <!-- Slide background berganti otomatis setiap 5 detik (diatur script.js).
+             Ganti URL gambar di sini jika ingin memakai foto PMB sendiri. -->
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1920&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&q=80')"></div>
+        </div>
+        <!-- Lapisan gelap transparan supaya teks di atas gambar mudah dibaca -->
+        <div class="hero-overlay"></div>
+
+        <!-- Konten utama hero -->
+        <div class="hero-content">
+            <p class="hero-subtitle">Selamat Datang di PMB Maribu</p>
+            <h1 class="hero-title">Kesehatan Terbaik<br>Untuk <span>Keluarga Anda</span></h1>
+            <p class="hero-desc">Konsultasi dokter, pemeriksaan kesehatan, hingga perawatan rutin dengan pelayanan yang ramah, cepat, dan terpercaya sejak 2011.</p>
+            <!-- Tombol ajakan: mengarah ke section layanan dan formulir kontak -->
+            <div class="hero-buttons">
+                <a href="#layanan" class="btn btn-primary">Lihat Layanan</a>
+                <a href="#kontak" class="btn btn-outline">Buat Janji</a>
+            </div>
+        </div>
+
+        <!-- Statistik singkat: angka akan beranimasi naik saat terlihat (script.js) -->
+        <div class="hero-stats">
+            <div class="stat-item">
+                <i class="fas fa-user-md"></i>
+                <h3>12</h3>
+                <p>Dokter Berpengalaman</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <h3>5000</h3>
+                <p>Pasien Dilayani</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-award"></i>
+                <h3>15</h3>
+                <p>Tahun Pengalaman</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         TENTANG: profil singkat PMB + foto + daftar keunggulan.
+         ========================================================== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Kolom kiri: dua foto yang tumpang tindih + badge pengalaman -->
+                <div class="about-images">
+                    <!-- Foto utama PMB (ganti src dengan foto asli jika ada) -->
+                    <div class="about-img-main">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Suasana PMB Maribu">
+                    </div>
+                    <!-- Foto kecil di pojok kanan bawah -->
+                    <div class="about-img-secondary">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="Dokter melayani pasien">
+                    </div>
+                    <!-- Badge unggul di pojok kiri atas -->
+                    <div class="experience-badge">
+                        <span class="exp-number">15+</span>
+                        <span class="exp-text">Tahun<br>Melayani</span>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: teks profil dan alasan memilih PMB -->
+                <div class="about-content">
+                    <p class="section-subtitle">Tentang Kami</p>
+                    <h2 class="section-title">Perawatan Terbaik Dimulai dari <span>PMB Maribu</span></h2>
+                    <p class="about-text">PMB Maribu hadir sejak 2011 untuk menjadi mitra kesehatan keluarga Indonesia. Kami memadukan dokter berpengalaman, fasilitas yang steril, dan pelayanan yang ramah agar setiap kunjungan terasa nyaman dan aman.</p>
+
+                    <!-- Tiga alasan singkat mengapa pasien memilih PMB ini -->
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+                            <div>
+                                <h4>Dokter Berpengalaman</h4>
+                                <p>Ditangani dokter umum dan spesialis yang terpercaya.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <h4>Fasilitas Modern & Steril</h4>
+                                <p>Peralatan pemeriksaan lengkap dengan prosedur kebersihan ketat.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                            <div>
+                                <h4>Pelayanan Ramah & Cepat</h4>
+                                <p>Pendaftaran mudah dan antrean diprioritaskan sesuai jadwal janji.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         LAYANAN: kartu-kartu layanan yang bisa difilter berdasarkan
+         kategori. Tombol filter diproses oleh script.js.
+         ========================================================== -->
+    <section class="layanan" id="layanan">
+        <div class="container">
+            <p class="section-subtitle text-center">Layanan Kami</p>
+            <h2 class="section-title text-center">Solusi Kesehatan <span>Untuk Semua</span></h2>
+            <p class="section-desc text-center">Pilih layanan yang Anda butuhkan, lalu buat janji kunjungan melalui tim kami.</p>
+
+            <!-- Tombol filter: nilai data-filter harus sama dengan data-category pada kartu -->
+            <div class="layanan-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="konsultasi">Konsultasi</button>
+                <button class="filter-btn" data-filter="pemeriksaan">Pemeriksaan</button>
+                <button class="filter-btn" data-filter="perawatan">Perawatan</button>
+            </div>
+
+            <!-- Grid kartu layanan. Harga di bawah adalah contoh dan bisa diganti. -->
+            <div class="layanan-grid">
+
+                <!-- Kartu 1: Konsultasi Umum -->
+                <div class="layanan-card" data-category="konsultasi">
+                    <div class="layanan-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Konsultasi dokter umum">
+                        <div class="layanan-badge">Konsultasi</div>
+                        <div class="layanan-price">Mulai <strong>Rp 75.000</strong></div>
+                    </div>
+                    <div class="layanan-info">
+                        <h3>Konsultasi Umum</h3>
+                        <p><i class="fas fa-clock"></i> 30 Menit / Sesi</p>
+                        <div class="layanan-footer">
+                            <div class="layanan-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="#kontak" class="btn btn-sm">Buat Janji</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 2: Medical Check Up -->
+                <div class="layanan-card" data-category="pemeriksaan">
+                    <div class="layanan-img">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Pemeriksaan kesehatan">
+                        <div class="layanan-badge badge-pemeriksaan">Pemeriksaan</div>
+                        <div class="layanan-price">Mulai <strong>Rp 350.000</strong></div>
+                    </div>
+                    <div class="layanan-info">
+                        <h3>Medical Check Up</h3>
+                        <p><i class="fas fa-clock"></i> 60 Menit / Paket</p>
+                        <div class="layanan-footer">
+                            <div class="layanan-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="#kontak" class="btn btn-sm">Buat Janji</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 3: Vaksinasi & Imunisasi -->
+                <div class="layanan-card" data-category="perawatan">
+                    <div class="layanan-img">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=80" alt="Vaksinasi">
+                        <div class="layanan-badge badge-perawatan">Perawatan</div>
+                        <div class="layanan-price">Mulai <strong>Rp 150.000</strong></div>
+                    </div>
+                    <div class="layanan-info">
+                        <h3>Vaksinasi & Imunisasi</h3>
+                        <p><i class="fas fa-clock"></i> 15 Menit / Dosis</p>
+                        <div class="layanan-footer">
+                            <div class="layanan-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <a href="#kontak" class="btn btn-sm">Buat Janji</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 4: Perawatan Luka -->
+                <div class="layanan-card" data-category="perawatan">
+                    <div class="layanan-img">
+                        <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&q=80" alt="Perawatan luka">
+                        <div class="layanan-badge badge-perawatan">Perawatan</div>
+                        <div class="layanan-price">Mulai <strong>Rp 120.000</strong></div>
+                    </div>
+                    <div class="layanan-info">
+                        <h3>Perawatan Luka</h3>
+                        <p><i class="fas fa-clock"></i> 20 Menit / Tindakan</p>
+                        <div class="layanan-footer">
+                            <div class="layanan-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="#kontak" class="btn btn-sm">Buat Janji</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 5: Terapi Fisik -->
+                <div class="layanan-card" data-category="perawatan">
+                    <div class="layanan-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Terapi fisik">
+                        <div class="layanan-badge badge-perawatan">Perawatan</div>
+                        <div class="layanan-price">Mulai <strong>Rp 200.000</strong></div>
+                    </div>
+                    <div class="layanan-info">
+                        <h3>Terapi Fisik</h3>
+                        <p><i class="fas fa-clock"></i> 45 Menit / Sesi</p>
+                        <div class="layanan-footer">
+                            <div class="layanan-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <a href="#kontak" class="btn btn-sm">Buat Janji</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kartu 6: Konsultasi Gizi -->
+                <div class="layanan-card" data-category="konsultasi">
+                    <div class="layanan-img">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Konsultasi gizi dan makan sehat">
+                        <div class="layanan-badge">Konsultasi</div>
+                        <div class="layanan-price">Mulai <strong>Rp 100.000</strong></div>
+                    </div>
+                    <div class="layanan-info">
+                        <h3>Konsultasi Gizi</h3>
+                        <p><i class="fas fa-clock"></i> 30 Menit / Sesi</p>
+                        <div class="layanan-footer">
+                            <div class="layanan-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <a href="#kontak" class="btn btn-sm">Buat Janji</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================
+                     CARA MENAMBAH KARTU BARU:
+                     salin salah satu blok .layanan-card di atas, lalu ubah:
+                     1. data-category: konsultasi / pemeriksaan / perawatan
+                     2. src gambar, nama layanan, harga, durasi, dan rating
+                     ============================================================ -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         FASILITAS: tiga kartu keunggulan. Tombol "Detail Fasilitas"
+         membuka teks tambahan; logikanya ada di script.js.
+         ========================================================== -->
+    <section class="fasilitas" id="fasilitas">
+        <div class="container">
+            <p class="section-subtitle text-center">Fasilitas Kami</p>
+            <h2 class="section-title text-center">Apa yang Kami <span>Sediakan?</span></h2>
+            <p class="section-desc text-center">Semua fasilitas dirancang supaya pemeriksaan terasa nyaman dan aman.</p>
+
+            <div class="fasilitas-grid">
+                <!-- Kartu unggulan (featured) diberi highlight khusus -->
+                <div class="fasilitas-card featured">
+                    <div class="fasilitas-icon"><i class="fas fa-building"></i></div>
+                    <h3>Ruang Pemeriksaan Modern</h3>
+                    <p>Ruang konsultasi bersih, steril, dan dilengkapi peralatan pemeriksaan terkini.</p>
+                    <div class="fasilitas-detail">
+                        <p>Setiap ruang pemeriksaan dibersihkan setelah pemakaian, memiliki ventilasi baik, serta dilengkapi alat pemeriksaan seperti tensimeter, stetoskop, dan alat USG dasar untuk kebutuhan konsultasi.</p>
+                    </div>
+                    <button type="button" class="fasilitas-link">Detail Fasilitas <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <div class="fasilitas-card">
+                    <div class="fasilitas-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Tim Dokter Spesialis</h3>
+                    <p>Dokter umum dan spesialis siap membantu sesuai kebutuhan kesehatan Anda.</p>
+                    <div class="fasilitas-detail">
+                        <p>Tim medis kami terdiri dari dokter umum, dokter anak, dokter kulit, dan dokter gizi. Setiap dokter berpengalaman melayani pasien dewasa maupun anak-anak dengan pendekatan yang ramah.</p>
+                    </div>
+                    <button type="button" class="fasilitas-link">Detail Fasilitas <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <div class="fasilitas-card">
+                    <div class="fasilitas-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Pendaftaran & Antrean Cepat</h3>
+                    <p>Buat janji lewat WhatsApp, lalu datang sesuai jadwal tanpa antre panjang.</p>
+                    <div class="fasilitas-detail">
+                        <p>Pendaftaran dapat dilakukan cukup dengan mengirim pesan lewat WhatsApp atau formulir di halaman ini. Tim kami akan mengonfirmasi jadwal dan menyiapkan ruang pemeriksaan sebelum Anda tiba.</p>
+                    </div>
+                    <button type="button" class="fasilitas-link">Detail Fasilitas <i class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         TIM DOKTER: menampilkan empat dokter beserta jadwal praktik.
+         Ganti foto, nama, dan jadwal dengan data PMB Maribu.
+         ========================================================== -->
+    <section class="dokter" id="dokter">
+        <div class="container">
+            <p class="section-subtitle text-center">Tim Medis Kami</p>
+            <h2 class="section-title text-center">Dokter <span>Berpengalaman</span></h2>
+            <p class="section-desc text-center">Kenali dokter yang akan melayani Anda selama kunjungan.</p>
+
+            <div class="dokter-grid">
+                <!-- Kartu dokter 1 -->
+                <div class="dokter-card">
+                    <div class="dokter-foto">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80" alt="dr. Azka Pratama">
+                    </div>
+                    <div class="dokter-info">
+                        <h3>dr. Azka Pratama, Sp.PD</h3>
+                        <p class="dokter-spesialis">Penyakit Dalam</p>
+                        <p class="dokter-jadwal"><i class="fas fa-clock"></i> Senin - Jumat, 08.00 - 15.00</p>
+                    </div>
+                </div>
+
+                <!-- Kartu dokter 2 -->
+                <div class="dokter-card">
+                    <div class="dokter-foto">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="dr. Nadia Safitri">
+                    </div>
+                    <div class="dokter-info">
+                        <h3>dr. Nadia Safitri, Sp.A</h3>
+                        <p class="dokter-spesialis">Dokter Anak</p>
+                        <p class="dokter-jadwal"><i class="fas fa-clock"></i> Senin - Sabtu, 09.00 - 16.00</p>
+                    </div>
+                </div>
+
+                <!-- Kartu dokter 3 -->
+                <div class="dokter-card">
+                    <div class="dokter-foto">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&q=80" alt="dr. Rizky Ananda">
+                    </div>
+                    <div class="dokter-info">
+                        <h3>dr. Rizky Ananda, Sp.KK</h3>
+                        <p class="dokter-spesialis">Dokter Kulit</p>
+                        <p class="dokter-jadwal"><i class="fas fa-clock"></i> Selasa - Sabtu, 10.00 - 17.00</p>
+                    </div>
+                </div>
+
+                <!-- Kartu dokter 4 -->
+                <div class="dokter-card">
+                    <div class="dokter-foto">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" alt="dr. Maya Anggraini">
+                    </div>
+                    <div class="dokter-info">
+                        <h3>dr. Maya Anggraini, Sp.GK</h3>
+                        <p class="dokter-spesialis">Dokter Gizi</p>
+                        <p class="dokter-jadwal"><i class="fas fa-clock"></i> Rabu - Sabtu, 08.00 - 14.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         CTA (Call To Action): ajakan singkat sebelum testimoni.
+         Tombol memakai nomor WhatsApp/telepon contoh di bawah.
+         ========================================================== -->
+    <section class="cta">
+        <div class="cta-overlay"></div>
+        <div class="container cta-content">
+            <h2>Siap Menjaga Kesehatan Anda?</h2>
+            <p>Hubungi kami sekarang untuk membuat janji dan mendapatkan pemeriksaan yang sesuai dengan kebutuhan Anda.</p>
+            <div class="cta-buttons">
+                <!-- Ganti nomor 6281234567890 dengan nomor WhatsApp PMB yang pengguna pakai -->
+                <a href="https://wa.me/6281234567890" class="btn btn-white" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                </a>
+                <a href="tel:+6281234567890" class="btn btn-outline-white">
+                    <i class="fas fa-phone"></i> Telepon Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         TESTIMONI: pengalaman pasien. Foto profil di sini memakai
+         layanan contoh randomuser.me dan bisa diganti foto asli.
+         ========================================================== -->
+    <section class="testimoni" id="testimoni">
+        <div class="container">
+            <p class="section-subtitle text-center">Testimoni</p>
+            <h2 class="section-title text-center">Kata Mereka Tentang <span>PMB Maribu</span></h2>
+            <p class="section-desc text-center">Dengarkan pengalaman pasien yang sudah merasakan pelayanan kami.</p>
+
+            <div class="testimoni-grid">
+                <!-- Testimoni 1 -->
+                <div class="testimoni-card">
+                    <div class="testimoni-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimoni-text">"Dokternya ramah dan menjelaskan dengan sabar. Antrean juga cepat karena sudah ada janji lewat WhatsApp. Recommended!"</p>
+                    <div class="testimoni-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Rina">
+                        <div>
+                            <h4>Rina Sari</h4>
+                            <p>Pasien Konsultasi Umum</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 2 -->
+                <div class="testimoni-card">
+                    <div class="testimoni-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimoni-text">"Saya membawa anak untuk pemeriksaan. Dokter anaknya sangat sabar dan ruangannya bersih. Alhamdulillah nyaman."</p>
+                    <div class="testimoni-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmad">
+                        <div>
+                            <h4>Ahmad Fauzi</h4>
+                            <p>Orang Tua Pasien Anak</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 3 -->
+                <div class="testimoni-card">
+                    <div class="testimoni-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimoni-text">"Paket medical check up lengkap dengan hasil yang dijelaskan langsung. Harga juga bersahabat untuk kantong keluarga."</p>
+                    <div class="testimoni-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Diana">
+                        <div>
+                            <h4>Diana Putri</h4>
+                            <p>Pasien Medical Check Up</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         KONTAK: alamat/kontak di kiri dan formulir janji di kanan.
+         Formulir TIDAK mengirim ke server; script.js membukanya
+         sebagai pesan WhatsApp ke nomor PMB.
+         ========================================================== -->
+    <section class="contact" id="kontak">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Kolom kiri: informasi kontak -->
+                <div class="contact-info">
+                    <p class="section-subtitle">Hubungi Kami</p>
+                    <h2 class="section-title">Ada Pertanyaan? <span>Hubungi Kami</span></h2>
+                    <p class="contact-desc">Jangan ragu menghubungi tim kami. Kami siap membantu Anda membuat jadwal kunjungan.</p>
+
+                    <!-- Daftar informasi: alamat, telepon, email, jam buka -->
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Alamat</h4>
+                                <p>Jl. Kesehatan No. 88, Jakarta Selatan, DKI Jakarta 12950</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4>Telepon / WhatsApp</h4>
+                                <p>+62 812-3456-7890</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@pmbmaribu.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Jam Operasional</h4>
+                                <p>Senin - Sabtu: 08.00 - 20.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ikon media sosial (tautan masih contoh: "#") -->
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: formulir permintaan janji -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Buat Janji Kunjungan</h3>
+
+                        <!-- Nama lengkap pasien -->
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Nama Lengkap" required>
+                        </div>
+
+                        <!-- Email dan nomor WhatsApp berdampingan di layar besar -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="No. WhatsApp" required>
+                            </div>
+                        </div>
+
+                        <!-- Pilihan layanan: urutannya sama dengan kartu di section layanan -->
+                        <div class="form-group">
+                            <select id="service" required>
+                                <option value="" disabled selected>Pilih Layanan</option>
+                                <option>Konsultasi Umum</option>
+                                <option>Medical Check Up</option>
+                                <option>Vaksinasi & Imunisasi</option>
+                                <option>Perawatan Luka</option>
+                                <option>Terapi Fisik</option>
+                                <option>Konsultasi Gizi</option>
+                            </select>
+                        </div>
+
+                        <!-- Pesan/keluhan singkat dari pasien -->
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Ceritakan keluhan atau pilih jadwal yang Anda inginkan..." required></textarea>
+                        </div>
+
+                        <!-- Tombol submit diproses script.js -->
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Kirim Permintaan Janji
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================
+         FOOTER: informasi ringkas di bawah halaman + tautan cepat.
+         ========================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom 1: identitas PMB dan media sosial -->
+                <div class="footer-col">
+                    <a href="#home" class="footer-logo">
+                        <i class="fas fa-cross"></i>
+                        <span>PMB Maribu</span>
+                    </a>
+                    <p>Mitra kesehatan keluarga Anda sejak 2011. Kami mengutamakan pelayanan yang ramah, aman, dan terjangkau.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Kolom 2: tautan ke layanan -->
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#layanan">Konsultasi Umum</a></li>
+                        <li><a href="#layanan">Medical Check Up</a></li>
+                        <li><a href="#layanan">Vaksinasi & Imunisasi</a></li>
+                        <li><a href="#layanan">Terapi Fisik</a></li>
+                        <li><a href="#layanan">Konsultasi Gizi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: tautan navigasi halaman -->
+                <div class="footer-col">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#fasilitas">Fasilitas</a></li>
+                        <li><a href="#dokter">Tim Dokter</a></li>
+                        <li><a href="#testimoni">Testimoni</a></li>
+                        <li><a href="#kontak">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 4: formulir newsletter (contoh, belum tersambung database) -->
+                <div class="footer-col">
+                    <h4>Info Kesehatan</h4>
+                    <p>Dapatkan tips kesehatan dan informasi layanan terbaru lewat email.</p>
+                    <form class="newsletter-form" onsubmit="return false;">
+                        <input type="email" placeholder="Masukkan email Anda">
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Baris hak cipta paling bawah -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 PMB Maribu. All rights reserved. &middot; Dibuat oleh <a href="https://www.instagram.com/dikerjain.idajaa/" target="_blank" rel="noopener">kerjain.id</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tombol kecil untuk kembali ke atas (muncul setelah scroll 500px) -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Tombol WhatsApp melayang di pojok kanan bawah -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- File JavaScript berisi semua interaksi: menu, filter, animasi, dan formulir -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
