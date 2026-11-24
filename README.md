@@ -28,8 +28,9 @@ Semua data di bawah ini masih **contoh**:
 1. **Nama, alamat, telepon, email, jam buka**
    - `index.html` → section `KONTAK` dan `FOOTER`.
 2. **Nomor WhatsApp**
-   - `index.html` → cari `wa.me/6281234567890` dan `tel:+6281234567890` (ada di CTA, tombol melayang, dan kontak).
-   - `script.js` → ubah nilai `NOMOR_WA = '6281234567890'`.
+   - Nomor yang terpasang: `083172941924` (format URL/WA: `6283172941924`).
+   - `index.html` → tautan `wa.me/6283172941924` dan `tel:+6283172941924` (CTA, tombol melayang, dan kontak).
+   - `script.js` → nilai `NOMOR_WA = '6283172941924'`.
 3. **Daftar layanan dan harga**
    - `index.html` → section `LAYANAN`. Tiap kartu memakai `data-category` (`konsultasi`, `pemeriksaan`, `perawatan`) yang harus cocok dengan tombol filter.
    - `script.js` → daftar `<option>` di formulir kontak juga perlu disesuaikan.

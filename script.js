@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
        7. FORMULIR PERMINTAAN JANJI -> WHATSAPP
        Fungsi: mencegah formulir terkirim ke server, lalu membuka
        WhatsApp dengan pesan yang sudah berisi data pasien.
-       Ganti NOMOR_WA di bawah dengan nomor PMB sebenarnya.
+       Nomor WhatsApp klinik sudah terpasang di NOMOR_WA di bawah.
        ---------------------------------------------------------- */
-    const NOMOR_WA = '6281234567890'; // format: 62 diikuti nomor tanpa angka 0 di depan
+    const NOMOR_WA = '6283172941924'; // format: 62 diikuti nomor tanpa angka 0 di depan
     const contactForm = document.getElementById('contactForm');
 
     contactForm.addEventListener('submit', (e) => {
